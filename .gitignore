@@ -1,23 +1,44 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.app {
+ background-color: #282c34;
+ min-height: 100vh;
+ display: flex;
+}
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+.wrapper {
+ /* width: 60%;
+ min-width: 800px;
+ max-width: 1000px; */
+ width: clamp(800px,60%,1000px);
+ margin: auto;
+ height: max(700px,60vh);
+}
 
-# testing
-/coverage
+.goods-wrapper {
+ width: 50%;
+ height: 75%;
+ margin: auto;
+ box-sizing: border-box;
+ border: 2px solid var(--main-gold);
+ padding: 20px;
+ overflow-y: auto;
 
-# production
-/build
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ align-items: center;
+ column-gap: 5px;
+ row-gap: 5px;
+}
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.goods-wrapper::-webkit-scrollbar {
+ width: 16px;
+}
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.goods-wrapper::-webkit-scrollbar-track {
+ background-color: #e4e4e4;
+ border-radius: 100px;
+}
+
+.goods-wrapper::-webkit-scrollbar-thumb {
+ background-color: #d4aa70;
+ border-radius: 100px;
+}
